@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TianGongKaiWu.Pages.ErrorPage"
+             Title="报错日志"
+             BackgroundColor="#121212">
+    <Grid RowDefinitions="*,Auto" Padding="15">
+        <ListView x:Name="ErrorListView" BackgroundColor="Transparent" RowHeight="70">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Frame BackgroundColor="#1E1E2E" CornerRadius="8" Padding="10" Margin="0,4" HasShadow="False">
+                            <VerticalStackLayout>
+                                <Label Text="{Binding ShortInfo}" TextColor="#FF6B6B" FontSize="13" FontAttributes="Bold" LineBreakMode="TailTruncation"/>
+                                <Label Text="{Binding StackTrace}" TextColor="#AAAAAA" FontSize="11" LineBreakMode="TailTruncation" MaxLines="2"/>
+                            </VerticalStackLayout>
+                        </Frame>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Button Grid.Row="1" Text="清空日志" BackgroundColor="#D32F2F" TextColor="White" CornerRadius="20" Clicked="OnClear"/>
+    </Grid>
+</ContentPage>

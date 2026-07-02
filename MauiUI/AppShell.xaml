@@ -12,5 +12,6 @@
         <ShellContent Title="女娲" Icon="nvwa_icon.png" ContentTemplate="{DataTemplate pages:NvWaPage}" Route="NvWaPage"/>
         <ShellContent Title="项目" Icon="folder_icon.png" ContentTemplate="{DataTemplate pages:FileManagerPage}" Route="FileManagerPage"/>
         <ShellContent Title="语法" Icon="book_icon.png" ContentTemplate="{DataTemplate pages:GrammarPage}" Route="GrammarPage"/>
+        <ShellContent Title="报错" Icon="error_icon.png" ContentTemplate="{DataTemplate pages:ErrorPage}" Route="ErrorPage"/>
     </TabBar>
 </Shell>
