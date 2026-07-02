@@ -30,6 +30,6 @@ public class ValidationResult
 {
     public bool IsValid { get; set; }
     public int ErrorLine { get; set; }
-    public string ErrorMessage { get; set; }
+    public string ErrorMessage { get; set; } = "";
     public static ValidationResult Valid => new ValidationResult { IsValid = true };
 }

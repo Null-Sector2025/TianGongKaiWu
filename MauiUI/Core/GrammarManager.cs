@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using Android.OS;
 using Microsoft.Maui.Storage;
 
 namespace TianGongKaiWu.Core;
@@ -30,7 +29,8 @@ public static class GrammarManager
     }
     public static void ExportGrammarToTxt()
     {
-        string path = Path.Combine(Environment.ExternalStorageDirectory.AbsolutePath, "Download/grammar_map.txt");
+        // 明确使用 Android.OS.Environment
+        string path = Path.Combine(Android.OS.Environment.ExternalStorageDirectory.AbsolutePath, "Download/grammar_map.txt");
         File.WriteAllText(path, string.Join("\n", GrammarDict.Select(kv => $"{kv.Key}|{kv.Value}")));
     }
     public static void ImportGrammarFromTxt(string filePath)

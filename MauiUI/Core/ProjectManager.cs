@@ -2,20 +2,20 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using Android.OS;
+using Android.OS;   // 确保使用 Android 的 Environment
 
 namespace TianGongKaiWu.Core;
 public class ProjectItem
 {
-    public string Name { get; set; }
-    public string Path { get; set; }
+    public string Name { get; set; } = "";
+    public string Path { get; set; } = "";
 }
 public class ProjectManager
 {
     public static readonly string ProjectDir = Path.Combine(Environment.ExternalStorageDirectory.AbsolutePath, "天工开物");
     public static ProjectManager Shared { get; } = new();
-    public string CurrentFile { get; set; }
-    public string CurrentContent { get; set; }
+    public string? CurrentFile { get; set; }
+    public string? CurrentContent { get; set; }
     private ProjectManager()
     {
         if (!Directory.Exists(ProjectDir)) Directory.CreateDirectory(ProjectDir);

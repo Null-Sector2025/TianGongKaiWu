@@ -1,18 +1,19 @@
 using System;
+using System.Collections.Generic;
 using System.IO;
 using TianGongKaiWu.Core;
 
 namespace TianGongKaiWu.Pages;
 public partial class PanGuPage : ContentPage
 {
-    private JavaTranslatorService _translator;
-    private string _currentFilePath;
+    private PinyinTranslator _translator;
+    private string _currentFilePath = "";
 
     public PanGuPage()
     {
         InitializeComponent();
         GrammarManager.Initialize();
-        _translator = new JavaTranslatorService();
+        _translator = new PinyinTranslator();
     }
 
     protected override async void OnAppearing()
