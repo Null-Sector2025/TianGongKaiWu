@@ -10,7 +10,14 @@
     <ApplicationDisplayVersion>2.0</ApplicationDisplayVersion>
     <SupportedOSPlatformVersion>24</SupportedOSPlatformVersion>
     <AndroidEnableNativeLibraries>true</AndroidEnableNativeLibraries>
+    <AndroidManifest>AndroidManifest.xml</AndroidManifest>
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Maui.Controls" Version="8.0.100" />
+    <PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="8.0.100" />
+  </ItemGroup>
+
   <ItemGroup>
     <AndroidJavaSource Include="Platforms\Android\java\**\*.java" />
     <AndroidLibrary Include="Platforms\Android\cpp\CMakeLists.txt" />
