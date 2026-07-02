@@ -11,7 +11,6 @@
         android:orientation="vertical"
         android:padding="16dp">
 
-        <!-- 模式切换 -->
         <com.google.android.material.chip.Chip
             android:id="@+id/chipMode"
             android:layout_width="wrap_content"
@@ -34,11 +33,10 @@
             android:background="#2D2D44"
             android:textColor="@color/text_primary"
             android:hint='例如：dayin("你好")'
-            android:hintTextColor="@color/text_secondary"
+            android:textColorHint="@color/text_secondary"
             android:gravity="top"
             android:inputType="textMultiLine" />
 
-        <!-- 项目名称与按钮行 -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -53,7 +51,7 @@
                 android:background="@drawable/edit_text_bg"
                 android:textColor="@color/text_primary"
                 android:hint="项目名称"
-                android:hintTextColor="@color/text_secondary" />
+                android:textColorHint="@color/text_secondary" />
 
             <Button
                 android:id="@+id/btnOpen"
@@ -68,7 +66,6 @@
                 android:layout_marginStart="8dp" />
         </LinearLayout>
 
-        <!-- 转换按钮行 -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
