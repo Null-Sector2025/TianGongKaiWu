@@ -1,4 +1,7 @@
+using System;
+using System.IO;
 using TianGongKaiWu.Core;
+
 namespace TianGongKaiWu.Pages;
 public partial class FileManagerPage : ContentPage
 {

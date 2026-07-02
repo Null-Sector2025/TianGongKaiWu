@@ -1,4 +1,9 @@
+using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
+using Android.OS;
+
 namespace TianGongKaiWu.Core;
 public class ProjectItem
 {
@@ -7,7 +12,7 @@ public class ProjectItem
 }
 public class ProjectManager
 {
-    public static readonly string ProjectDir = Path.Combine(Android.OS.Environment.ExternalStorageDirectory.AbsolutePath, "天工开物");
+    public static readonly string ProjectDir = Path.Combine(Environment.ExternalStorageDirectory.AbsolutePath, "天工开物");
     public static ProjectManager Shared { get; } = new();
     public string CurrentFile { get; set; }
     public string CurrentContent { get; set; }

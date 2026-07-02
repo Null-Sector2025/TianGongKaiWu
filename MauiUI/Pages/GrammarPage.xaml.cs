@@ -1,4 +1,7 @@
+using System;
+using System.Linq;
 using TianGongKaiWu.Core;
+
 namespace TianGongKaiWu.Pages;
 public partial class GrammarPage : ContentPage
 {

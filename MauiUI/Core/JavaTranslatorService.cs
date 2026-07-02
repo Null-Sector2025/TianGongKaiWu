@@ -1,5 +1,7 @@
+using System;
 using Android.Runtime;
 using Java.Interop;
+
 namespace TianGongKaiWu.Core;
 public class JavaTranslatorService : IDisposable
 {

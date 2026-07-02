@@ -1,4 +1,6 @@
+using System;
 using TianGongKaiWu.Core;
+
 namespace TianGongKaiWu.Pages;
 public partial class NvWaPage : ContentPage
 {

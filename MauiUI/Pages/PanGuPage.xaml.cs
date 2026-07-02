@@ -1,4 +1,7 @@
+using System;
+using System.IO;
 using TianGongKaiWu.Core;
+
 namespace TianGongKaiWu.Pages;
 public partial class PanGuPage : ContentPage
 {
@@ -15,7 +18,6 @@ public partial class PanGuPage : ContentPage
     protected override async void OnAppearing()
     {
         base.OnAppearing();
-        // 进场动画
         this.Opacity = 0;
         await this.FadeTo(1, 500, Easing.CubicInOut);
         if (!string.IsNullOrEmpty(ProjectManager.Shared.CurrentFile))
