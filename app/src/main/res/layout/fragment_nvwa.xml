@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_dark"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:text="🌸 女娲 · 抟土造人"
+        android:textColor="@color/nvwa"
+        android:textSize="22sp"
+        android:layout_marginBottom="12dp" />
+
+    <EditText
+        android:id="@+id/inputCode"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="#2D2D44"
+        android:textColor="@color/text_primary"
+        android:hint="输入拼音代码..."
+        android:gravity="top"
+        android:inputType="textMultiLine" />
+
+    <Button
+        android:id="@+id/btnRun"
+        android:text="▶ 造化万物"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="@color/nvwa"
+        style="@style/Widget.Material3.Button" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginTop="12dp">
+        <TextView
+            android:id="@+id/outputText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#313244"
+            android:textColor="#CDD6F4"
+            android:padding="12dp"
+            android:fontFamily="monospace"
+            android:textSize="14sp" />
+    </ScrollView>
+</LinearLayout>

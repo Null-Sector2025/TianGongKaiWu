@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_dark"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:text="🛡️ 报错日志"
+        android:textColor="#FF6B6B"
+        android:textSize="22sp"
+        android:layout_marginBottom="12dp" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <TextView
+            android:id="@+id/textErrors"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#1E1E2E"
+            android:textColor="#CDD6F4"
+            android:fontFamily="monospace"
+            android:padding="8dp" />
+    </ScrollView>
+
+    <Button
+        android:id="@+id/btnClear"
+        android:text="清空日志"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="#D32F2F"
+        style="@style/Widget.Material3.Button" />
+</LinearLayout>
