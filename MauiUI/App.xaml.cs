@@ -7,7 +7,6 @@ public partial class App : Application
     {
         InitializeComponent();
 
-        // 全局异常捕获
         AppDomain.CurrentDomain.UnhandledException += (sender, args) =>
         {
             ErrorLogger.Log("未处理异常", args.ExceptionObject as Exception ?? new Exception("未知错误"));

@@ -16,7 +16,10 @@ public static class GrammarManager
             using var reader = new StreamReader(stream);
             Parse(reader.ReadToEnd());
         }
-        catch { }
+        catch (Exception ex)
+        {
+            ErrorLogger.Log("语法文件加载", ex);
+        }
     }
     private static void Parse(string raw)
     {
@@ -29,9 +32,20 @@ public static class GrammarManager
     }
     public static void ExportGrammarToTxt()
     {
-        string path = Path.Combine(Android.OS.Environment.ExternalStorageDirectory.AbsolutePath, "Download/grammar_map.txt");
-        string content = string.Join("\n", GrammarDict.Select(kv => $"{kv.Key}|{kv.Value}"));
-        File.WriteAllText(path, content);
+        // 导出到下载目录，但捕获异常
+        try
+        {
+            string path = Path.Combine(Android.OS.Environment.ExternalStorageDirectory.AbsolutePath, "Download/grammar_map.txt");
+            string content = string.Join("\n", GrammarDict.Select(kv => $"{kv.Key}|{kv.Value}"));
+            File.WriteAllText(path, content);
+        }
+        catch (Exception ex)
+        {
+            ErrorLogger.Log("导出语法", ex);
+            // 备选：保存到内部
+            string internalPath = Path.Combine(FileSystem.AppDataDirectory, "grammar_map.txt");
+            File.WriteAllText(internalPath, string.Join("\n", GrammarDict.Select(kv => $"{kv.Key}|{kv.Value}")));
+        }
     }
     public static void ImportGrammarFromTxt(string filePath)
     {
