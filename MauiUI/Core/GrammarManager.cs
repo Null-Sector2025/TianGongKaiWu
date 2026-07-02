@@ -29,9 +29,9 @@ public static class GrammarManager
     }
     public static void ExportGrammarToTxt()
     {
-        // 明确使用 Android.OS.Environment
         string path = Path.Combine(Android.OS.Environment.ExternalStorageDirectory.AbsolutePath, "Download/grammar_map.txt");
-        File.WriteAllText(path, string.Join("\n", GrammarDict.Select(kv => $"{kv.Key}|{kv.Value}")));
+        string content = string.Join("\n", GrammarDict.Select(kv => $"{kv.Key}|{kv.Value}"));
+        File.WriteAllText(path, content);
     }
     public static void ImportGrammarFromTxt(string filePath)
     {

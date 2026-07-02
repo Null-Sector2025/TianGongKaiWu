@@ -7,7 +7,7 @@ public class PinyinInterpreter
 {
     private Dictionary<string, object> vars = new();
     private Dictionary<string, string> grammar;
-    public event Action<string> OnOutput;
+    public event Action<string>? OnOutput;
     public PinyinInterpreter(Dictionary<string, string> grammarDict)
     {
         grammar = grammarDict;
