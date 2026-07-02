@@ -33,7 +33,7 @@
             android:layout_height="200dp"
             android:background="#2D2D44"
             android:textColor="@color/text_primary"
-            android:hint="例如：dayin(\"你好\")"
+            android:hint='例如：dayin("你好")'
             android:hintTextColor="@color/text_secondary"
             android:gravity="top"
             android:inputType="textMultiLine" />
