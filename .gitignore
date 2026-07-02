@@ -1,0 +1,10 @@
+*.apk
+bin/
+obj/
+*.log
+.idea/
+.vscode/
+build/
+cmake-build-*
+.env
+Download/*.txt

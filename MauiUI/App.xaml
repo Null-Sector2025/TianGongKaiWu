@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TianGongKaiWu.App">
+    <Application.Resources>
+        <ResourceDictionary>
+            <!-- 天工开物主题色 -->
+            <Color x:Key="Primary">#E65100</Color>     <!-- 深橙 -->
+            <Color x:Key="Secondary">#00BCD4</Color>   <!-- 青色 -->
+            <Color x:Key="BgDark">#121212</Color>
+            <Color x:Key="Surface">#1E1E2E</Color>
+            <Color x:Key="TextPrimary">#FFFFFF</Color>
+            <Color x:Key="TextSecondary">#B0BEC5</Color>
+            <Color x:Key="AccentPangu">#FF9800</Color>
+            <Color x:Key="AccentNvwa">#E91E63</Color>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

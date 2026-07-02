@@ -1,0 +1,7 @@
+bianliang name = "天地";
+dayin("混沌初开，" + name + "始成。");
+ruguo (name == "天地") {
+    dayin("万物皆备于我！");
+} fouze {
+    dayin("造化需时。");
+}

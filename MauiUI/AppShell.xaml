@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:pages="clr-namespace:TianGongKaiWu.Pages"
+       x:Class="TianGongKaiWu.AppShell"
+       Shell.FlyoutBehavior="Disabled"
+       Shell.NavBarIsVisible="True"
+       Shell.BackgroundColor="{StaticResource Primary}"
+       Shell.ForegroundColor="White">
+    <TabBar x:Name="MainTabBar">
+        <ShellContent Title="盘古" Icon="pangu_icon.png" ContentTemplate="{DataTemplate pages:PanGuPage}" Route="PanGuPage"/>
+        <ShellContent Title="女娲" Icon="nvwa_icon.png" ContentTemplate="{DataTemplate pages:NvWaPage}" Route="NvWaPage"/>
+        <ShellContent Title="项目" Icon="folder_icon.png" ContentTemplate="{DataTemplate pages:FileManagerPage}" Route="FileManagerPage"/>
+        <ShellContent Title="语法" Icon="book_icon.png" ContentTemplate="{DataTemplate pages:GrammarPage}" Route="GrammarPage"/>
+    </TabBar>
+</Shell>

@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFrameworks>net8.0-android</TargetFrameworks>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>TianGongKaiWu</RootNamespace>
+    <UseMaui>true</UseMaui>
+    <ApplicationTitle>天工开物</ApplicationTitle>
+    <ApplicationId>com.tiangongkaiwu.coder</ApplicationId>
+    <ApplicationVersion>2</ApplicationVersion>
+    <ApplicationDisplayVersion>2.0</ApplicationDisplayVersion>
+    <SupportedOSPlatformVersion>24</SupportedOSPlatformVersion>
+    <AndroidEnableNativeLibraries>true</AndroidEnableNativeLibraries>
+  </PropertyGroup>
+  <ItemGroup>
+    <AndroidJavaSource Include="Platforms\Android\java\**\*.java" />
+    <AndroidLibrary Include="Platforms\Android\cpp\CMakeLists.txt" />
+    <MauiAsset Include="..\GrammarData\default_grammar.txt">
+      <LogicalName>GrammarData/default_grammar.txt</LogicalName>
+    </MauiAsset>
+  </ItemGroup>
+</Project>
