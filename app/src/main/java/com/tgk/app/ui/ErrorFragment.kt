@@ -19,7 +19,9 @@ class ErrorFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         val sb = StringBuilder()
-        ErrorLogger.Errors.forEach { sb.append("${it.ShortInfo}\n${it.StackTrace}\n\n") }
+        ErrorLogger.Errors.forEach { error ->
+            sb.append("${error.ShortInfo}\n${error.stackTrace}\n\n")
+        }
         binding.textErrors.text = sb.ifEmpty { "暂无错误记录" }
         binding.btnClear.setOnClickListener {
             ErrorLogger.clear()
