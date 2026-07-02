@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_dark">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- 模式切换 -->
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipMode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="🐉 盘古模式"
+            android:checkable="true"
+            android:checked="true"
+            style="@style/Widget.Material3.Chip.Filter" />
+
+        <TextView
+            android:text="输入拼音代码"
+            android:textColor="@color/text_primary"
+            android:textSize="16sp"
+            android:layout_marginTop="16dp" />
+
+        <EditText
+            android:id="@+id/inputCode"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="#2D2D44"
+            android:textColor="@color/text_primary"
+            android:hint="例如：dayin(\"你好\")"
+            android:hintTextColor="@color/text_secondary"
+            android:gravity="top"
+            android:inputType="textMultiLine" />
+
+        <!-- 项目名称与按钮行 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp">
+
+            <EditText
+                android:id="@+id/inputName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/edit_text_bg"
+                android:textColor="@color/text_primary"
+                android:hint="项目名称"
+                android:hintTextColor="@color/text_secondary" />
+
+            <Button
+                android:id="@+id/btnOpen"
+                android:text="打开"
+                style="@style/Widget.Material3.Button.TonalButton"
+                android:layout_marginStart="8dp" />
+
+            <Button
+                android:id="@+id/btnSave"
+                android:text="保存"
+                style="@style/Widget.Material3.Button.TonalButton"
+                android:layout_marginStart="8dp" />
+        </LinearLayout>
+
+        <!-- 转换按钮行 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="16dp">
+
+            <Button android:id="@+id/btnJava" android:text="Java"
+                style="@style/Widget.Material3.Button.TonalButton" android:layout_width="0dp"
+                android:layout_weight="1" android:layout_marginEnd="4dp"/>
+
+            <Button android:id="@+id/btnCSharp" android:text="C#"
+                style="@style/Widget.Material3.Button.TonalButton" android:layout_width="0dp"
+                android:layout_weight="1" android:layout_marginEnd="4dp"/>
+
+            <Button android:id="@+id/btnPython" android:text="Python"
+                style="@style/Widget.Material3.Button.TonalButton" android:layout_width="0dp"
+                android:layout_weight="1" android:layout_marginEnd="4dp"/>
+
+            <Button android:id="@+id/btnJs" android:text="JS"
+                style="@style/Widget.Material3.Button.TonalButton" android:layout_width="0dp"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnExecute"
+            android:text="▶ 执行"
+            style="@style/Widget.Material3.Button"
+            android:layout_marginTop="8dp"
+            android:backgroundTint="@color/nvwa" />
+
+        <TextView
+            android:text="输出结果"
+            android:textColor="@color/text_primary"
+            android:textSize="16sp"
+            android:layout_marginTop="16dp" />
+
+        <EditText
+            android:id="@+id/outputCode"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="#313244"
+            android:textColor="#CDD6F4"
+            android:gravity="top"
+            android:inputType="textMultiLine"
+            android:focusable="false" />
+    </LinearLayout>
+</ScrollView>
