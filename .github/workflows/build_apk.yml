@@ -9,31 +9,35 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: 强制使用 .NET 8 SDK
+        run: echo '{"sdk":{"version":"8.0.100","rollForward":"latestFeature"}}' > global.json
+
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+          global-json-file: global.json
+
       - uses: actions/setup-java@v4
         with:
           java-version: '17'
           distribution: temurin
 
-      - uses: actions/setup-dotnet@v4
-        with:
-          dotnet-version: '8.0.x'
+      - name: 安装 MAUI Android 工作负载
+        run: dotnet workload install maui-android
 
-      - name: Install .NET Android workloads
-        run: dotnet workload install android
-
-      - name: Setup Android SDK/NDK
+      - name: 设置 Android SDK / NDK
         run: |
           yes | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --licenses || true
           $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager "platforms;android-35" "build-tools;35.0.0" "ndk;26.2.11394342"
           echo "ANDROID_NDK_ROOT=$ANDROID_HOME/ndk/26.2.11394342" >> $GITHUB_ENV
 
-      - name: Build APK
+      - name: 构建 APK
         run: |
           cd MauiUI
           dotnet restore
           dotnet publish -f net8.0-android -c Release -p:AndroidSdkDirectory=$ANDROID_HOME
 
-      - name: Upload to Release
+      - name: 上传到 Release
         uses: softprops/action-gh-release@v2
         with:
           files: MauiUI/bin/Release/net8.0-android/*-Signed.apk
